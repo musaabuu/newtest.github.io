@@ -1,0 +1,92 @@
+
+
+body {
+    font-family: "Exo 2", sans-serif;
+    background-color: rgb(25, 8, 59);
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}  
+
+@property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.wrapper {
+    background: linear-gradient(var(--angle), rgb(7, 127, 134), blue);
+    animation: bg-move 10s infinite linear;
+    width: 100%;
+}
+
+.city-input {
+    display: flex;
+    align-items: center;
+    background-color: rgb(255 255 255 / .4);
+    padding: .5rem;
+    border-radius: .5rem;
+    max-width: 90%;
+    margin-inline: auto;
+    margin-top: 1rem;
+}
+
+.city-input > input[type="text"] {
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.current-weather {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.sun-rise-set {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;;
+}
+
+.hourly-weather {
+    display: flex;
+    gap: 2rem;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: 2rem;
+}
+
+.card-date {
+    scroll-snap-align: center;
+    text-align: center;
+    border-radius: 2rem;
+    padding: .5rem;
+    background-color: rgb(255 255 255 / .1);
+    box-shadow: 4px 4px 0px 0px;
+}
+
+.daily-weather {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.day {
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: rgb(255 255 255 / .1);
+}
+
+@keyframes bg-move {
+    to {
+        --angle: 360deg;
+    }
+}
